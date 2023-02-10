@@ -1,4 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap"); */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +5,7 @@
   text-decoration: none;
   outline: none;
   list-style: none;
-  font-family: "Comfortaa", sans-serif;
+  font-family: sans-serif;
   transition: all 0.5s linear;
 }
 /* Cor style */
@@ -61,7 +60,7 @@ section {
   padding: 10px 20px;
   font-size: 21px;
   border: 0.1rem solid #235159;
-  background: #0003;
+  background: #1f2325;
   color: #7dba29;
   cursor: pointer;
   text-transform: capitalize;
@@ -676,6 +675,69 @@ section {
 .reviews .col .stars {
   font-size: 14px;
   color: #0d457e;
+}
+/* ==================================================================
+ ========================= Course style ============================ */
+.course .col {
+  width: 400px;
+  margin: 15px 15px 0 0px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 15%);
+  background-color: #282d32;
+  color: #fff;
+}
+.course .col .images {
+  height: 300px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.course .col:hover img {
+  transform: scale(1.1);
+}
+.course .col .images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.course .images h3 {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  background-color: #f0fdfa;
+  padding: 5px 12px;
+  font-size: 16px;
+  color: #494948;
+}
+.course .content {
+  padding: 22px;
+  text-align: center;
+}
+.course .content h3 {
+  font-size: 22px;
+}
+.course .content p {
+  padding: 1rem 0;
+  font-size: 15px;
+  line-height: 2;
+}
+.course .content .icons {
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 0.1rem solid #7dba28;
+}
+.course .content .icons span {
+  font-size: 15px;
+}
+.course .content .icons i {
+  padding-right: 0.5rem;
+}
+.load-more {
+  margin: 2rem 0;
+  text-align: center;
 }
 /* footer style */
 .footer {

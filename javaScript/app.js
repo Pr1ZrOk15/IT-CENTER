@@ -132,3 +132,11 @@ prevBtn.addEventListener("click", () => {
 });
 
 // home-curses jS
+
+// course js
+// const readMore = document.querySelector(".col"),
+//   btnNone = document.querySelector(".btn-none");
+
+// btnNone.addEventListener("click", () => {
+//   readMore.classList.remove("hide");
+// });
