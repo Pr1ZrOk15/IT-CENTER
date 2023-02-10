@@ -43,16 +43,26 @@ const modal = document.querySelector(".account"),
   logBtn = document.querySelector(".login-btn");
 
 // Login form js
+function modalClose() {
+  modal.classList.add("hide");
+  modal.classList.remove("show");
+}
 icon.addEventListener("click", () => {
   modal.classList.add("show");
   modal.classList.remove("hide");
 });
 
-closeModal.addEventListener("click", () => {
-  modal.classList.add("hide");
-  modal.classList.remove("show");
-});
+closeModal.addEventListener("click", modalClose);
+
 // Register Form js
+function formLog() {
+  regForm.classList.add("hide");
+  regForm.classList.remove("show");
+}
+function formReg() {
+  logForm.classList.add("show");
+  logForm.classList.remove("hide");
+}
 regBtn.addEventListener("click", () => {
   logForm.classList.add("hide");
   logForm.classList.remove("show");
@@ -60,10 +70,8 @@ regBtn.addEventListener("click", () => {
   regForm.classList.remove("hide");
 });
 logBtn.addEventListener("click", () => {
-  logForm.classList.add("show");
-  logForm.classList.remove("hide");
-  regForm.classList.add("hide");
-  regForm.classList.remove("show");
+  formLog();
+  formReg();
 });
 // slider home
 const sliderContainer = document.querySelector(".slider__container"),
