@@ -54,6 +54,11 @@ icon.addEventListener("click", () => {
 
 closeModal.addEventListener("click", modalClose);
 
+modal.addEventListener("click", (e) => {
+  if (e.target == modal || e.target.getAttribute("data-modalClose") == "") {
+    modalClose();
+  }
+});
 // Register Form js
 function formLog() {
   regForm.classList.add("hide");
@@ -63,6 +68,7 @@ function formReg() {
   logForm.classList.add("show");
   logForm.classList.remove("hide");
 }
+
 regBtn.addEventListener("click", () => {
   logForm.classList.add("hide");
   logForm.classList.remove("show");
@@ -74,69 +80,71 @@ logBtn.addEventListener("click", () => {
   formReg();
 });
 // slider home
-const sliderContainer = document.querySelector(".slider__container"),
-  slider = document.querySelectorAll(".slider-offer"),
-  prevBtn = document.querySelector(".prev"),
-  nextBtn = document.querySelector(".next"),
-  current = document.querySelector(".current"),
-  total = document.querySelector(".total");
+// const sliderContainer = document.querySelector(".slider__container"),
+//   slider = document.querySelectorAll(".slider-offer"),
+//   prevBtn = document.querySelector(".prev"),
+//   nextBtn = document.querySelector(".next"),
+//   current = document.querySelector(".current"),
+//   total = document.querySelector(".total");
 
-let idx = 0;
-let slideIdx = 1;
+// let idx = 0;
+// let slideIdx = 1;
 
-// total
-if (slider.length < 10) {
-  total.textContent = `0${slider.length}`;
-} else {
-  total.textContent = slider.length;
-}
+// // total
+// if (slider.length < 10) {
+//   total.textContent = `0${slider.length}`;
+// } else {
+//   total.textContent = slider.length;
+// }
 
-// current
-function currentSlide() {
-  if (slider.length < 10) {
-    current.textContent = `0${slideIdx}`;
-  } else {
-    current.textContent = slideIdx;
-  }
-}
-currentSlide();
-function changeSlider() {
-  if (idx > slider.length - 1) {
-    idx = 0;
-  } else if (idx < 0) {
-    idx = slider.length - 1;
-  }
-  sliderContainer.style.transform = `translateX(-${idx * 100}%)`;
-}
+// // current
+// function currentSlide() {
+//   if (slider.length < 10) {
+//     current.textContent = `0${slideIdx}`;
+//   } else {
+//     current.textContent = slideIdx;
+//   }
+// }
+// currentSlide();
+// function changeSlider() {
+//   if (idx > slider.length - 1) {
+//     idx = 0;
+//   } else if (idx < 0) {
+//     idx = slider.length - 1;
+//   }
+//   sliderContainer.style.transform = `translateX(-${idx * 100}%)`;
+// }
 
-nextBtn.addEventListener("click", () => {
-  idx++;
-  changeSlider();
-  if (slideIdx > slider.length - 1) {
-    slideIdx = 1;
-  } else {
-    slideIdx++;
-  }
-  currentSlide();
-});
+// nextBtn.addEventListener("click", () => {
+//   idx++;
+//   changeSlider();
+//   if (slideIdx > slider.length - 1) {
+//     slideIdx = 1;
+//   } else {
+//     slideIdx++;
+//   }
+//   currentSlide();
+// });
 
-prevBtn.addEventListener("click", () => {
-  idx--;
-  changeSlider();
-  if (slideIdx == 1) {
-    slideIdx = slider.length;
-  } else {
-    slideIdx--;
-  }
-  currentSlide();
-});
+// prevBtn.addEventListener("click", () => {
+//   idx--;
+//   changeSlider();
+//   if (slideIdx == 1) {
+//     slideIdx = slider.length;
+//   } else {
+//     slideIdx--;
+//   }
+//   currentSlide();
+// });
 
 // home-curses jS
 
 // course js
-// const readMore = document.querySelector(".col"),
-//   btnNone = document.querySelector(".btn-none");
+const readMore = document.querySelector(".row-course"),
+  btnNone = document.querySelector(".btn-none");
 
-// btnNone.addEventListener("click", () => {
-//   readMore.classList.remove("hide");
-// });
+btnNone.addEventListener("click", () => {
+  readMore.classList.remove("hide");
+  readMore.classList.add("show-active");
+  btnNone.classList.add("hide");
+});
