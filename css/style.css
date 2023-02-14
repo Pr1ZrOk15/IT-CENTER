@@ -109,6 +109,10 @@ section {
 .hide {
   display: none !important;
 }
+/* active */
+.active {
+  display: block;
+}
 /* show active */
 .show-active {
   display: inline-flex;
@@ -747,7 +751,7 @@ section {
   text-align: center;
   background: #fff;
   width: 272px;
-  margin: 30px 22px 0 0;
+  margin: 30px 22px 10px 0;
   padding: 25px;
   display: flex;
   justify-content: center;
@@ -781,6 +785,86 @@ section {
 .contact .col-contact a {
   margin-top: 5px;
   color: #23272b;
+}
+/* contact form */
+.contact .col-2 {
+  width: 48%;
+  margin: 25px 0 0 15px;
+}
+.contact .col-2 img {
+  width: 100%;
+}
+.contact .col-2 form {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #282d32;
+}
+.contact .col-2 form .box {
+  width: 100%;
+  padding: 12px 14px;
+  border: 0.1rem solid #282d32;
+  font-size: 16px;
+  margin: 10px 0;
+}
+.contact .col-2 form textarea {
+  height: 150px;
+  resize: none;
+}
+/* Faq style */
+.faq-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.faq .col-3 {
+  width: 31.3%;
+  margin: 10px 0 15px 20px;
+}
+.faq .col-3 .accordion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  color: #494948;
+  font-size: 19px;
+  border: 1px solid #7dba28;
+  cursor: pointer;
+}
+.faq .col-3.active {
+  background-color: #7dba28;
+  color: #fff;
+}
+.faq .col-3 .accordion i {
+  color: #7dba28;
+}
+.faq .col-3.active i {
+  color: #fff;
+  transform: rotate(180deg);
+}
+.faq .col-3 .accordion-content {
+  padding: 12px;
+  font-size: 15px;
+  line-height: 2;
+  color: #777;
+  border: 1px solid #7dba28;
+  display: none;
+}
+.faq .col-3.active .accordion-content {
+  display: block !important;
+  background-color: #fff;
+}
+/* Partners style */
+.partners .partners-logo {
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.partners .partners-logo img {
+  height: 10vh;
 }
 /* footer style */
 .footer {
@@ -890,6 +974,12 @@ section {
   #header .container {
     width: 100%;
   }
+  .contact .col-2 {
+    width: 100%;
+  }
+  .faq .col-3 {
+    width: 47%;
+  }
 }
 /* 868 */
 @media (max-width: 868px) {
@@ -952,6 +1042,15 @@ section {
   }
   .course .col {
     margin: 15px 0;
+  }
+  .faq .col-3 {
+    width: 100%;
+  }
+}
+/* 679 */
+@media (max-width: 679px) {
+  .contact .col-contact {
+    margin: 30px 0px 10px 0;
   }
 }
 /* 538 */

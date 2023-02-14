@@ -80,62 +80,62 @@ logBtn.addEventListener("click", () => {
   formReg();
 });
 // slider home
-// const sliderContainer = document.querySelector(".slider__container"),
-//   slider = document.querySelectorAll(".slider-offer"),
-//   prevBtn = document.querySelector(".prev"),
-//   nextBtn = document.querySelector(".next"),
-//   current = document.querySelector(".current"),
-//   total = document.querySelector(".total");
+const sliderContainer = document.querySelector(".slider__container"),
+  slider = document.querySelectorAll(".slider-offer"),
+  prevBtn = document.querySelector(".prev"),
+  nextBtn = document.querySelector(".next"),
+  current = document.querySelector(".current"),
+  total = document.querySelector(".total");
 
-// let idx = 0;
-// let slideIdx = 1;
+let idx = 0;
+let slideIdx = 1;
 
-// // total
-// if (slider.length < 10) {
-//   total.textContent = `0${slider.length}`;
-// } else {
-//   total.textContent = slider.length;
-// }
+// total
+if (slider.length < 10) {
+  total.textContent = `0${slider.length}`;
+} else {
+  total.textContent = slider.length;
+}
 
-// // current
-// function currentSlide() {
-//   if (slider.length < 10) {
-//     current.textContent = `0${slideIdx}`;
-//   } else {
-//     current.textContent = slideIdx;
-//   }
-// }
-// currentSlide();
-// function changeSlider() {
-//   if (idx > slider.length - 1) {
-//     idx = 0;
-//   } else if (idx < 0) {
-//     idx = slider.length - 1;
-//   }
-//   sliderContainer.style.transform = `translateX(-${idx * 100}%)`;
-// }
+// current
+function currentSlide() {
+  if (slider.length < 10) {
+    current.textContent = `0${slideIdx}`;
+  } else {
+    current.textContent = slideIdx;
+  }
+}
+currentSlide();
+function changeSlider() {
+  if (idx > slider.length - 1) {
+    idx = 0;
+  } else if (idx < 0) {
+    idx = slider.length - 1;
+  }
+  sliderContainer.style.transform = `translateX(-${idx * 100}%)`;
+}
 
-// nextBtn.addEventListener("click", () => {
-//   idx++;
-//   changeSlider();
-//   if (slideIdx > slider.length - 1) {
-//     slideIdx = 1;
-//   } else {
-//     slideIdx++;
-//   }
-//   currentSlide();
-// });
+nextBtn.addEventListener("click", () => {
+  idx++;
+  changeSlider();
+  if (slideIdx > slider.length - 1) {
+    slideIdx = 1;
+  } else {
+    slideIdx++;
+  }
+  currentSlide();
+});
 
-// prevBtn.addEventListener("click", () => {
-//   idx--;
-//   changeSlider();
-//   if (slideIdx == 1) {
-//     slideIdx = slider.length;
-//   } else {
-//     slideIdx--;
-//   }
-//   currentSlide();
-// });
+prevBtn.addEventListener("click", () => {
+  idx--;
+  changeSlider();
+  if (slideIdx == 1) {
+    slideIdx = slider.length;
+  } else {
+    slideIdx--;
+  }
+  currentSlide();
+});
 
 // home-curses jS
 
@@ -148,3 +148,9 @@ btnNone.addEventListener("click", () => {
   readMore.classList.add("show-active");
   btnNone.classList.add("hide");
 });
+
+// Faq js
+
+const faq = document.querySelector(".faq-row"),
+  faqCol = document.querySelectorAll(".col-3"),
+  active = document.querySelector(".active");
