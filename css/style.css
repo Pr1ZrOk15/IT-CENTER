@@ -464,15 +464,20 @@ section {
   line-height: 2;
 }
 /* home-curses style*/
+.home-curses .container {
+  overflow: hidden;
+}
 .courses {
   width: 100%;
+  transform: translateX(0);
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  overflow: hidden;
+  transition: all 0.5s linear;
 }
 .curses-slider {
   position: relative;
-  width: 400px;
+  min-width: 400px;
   background-color: #f0fdfa;
   text-align: center;
   overflow: hidden;

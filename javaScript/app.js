@@ -2,13 +2,16 @@
 
 // loader
 const loader = document.querySelector(".loader-body");
-
-setTimeout(() => {
-  loader.style.opacity = "0";
+try {
   setTimeout(() => {
-    loader.classList.add("hide");
-  }, 200);
-}, 500);
+    loader.style.opacity = "0";
+    setTimeout(() => {
+      loader.classList.add("hide");
+    }, 200);
+  }, 500);
+} catch (error) {
+  console.log(error.massage);
+}
 
 // navbar js
 const bars = document.querySelector(".icon_navbar"),
@@ -87,67 +90,88 @@ const sliderContainer = document.querySelector(".slider__container"),
   current = document.querySelector(".current"),
   total = document.querySelector(".total");
 
-let idx = 0;
-let slideIdx = 1;
+try {
+  let idx = 0;
+  let slideIdx = 1;
 
-// total
-if (slider.length < 10) {
-  total.textContent = `0${slider.length}`;
-} else {
-  total.textContent = slider.length;
-}
-
-// current
-function currentSlide() {
+  // total
   if (slider.length < 10) {
-    current.textContent = `0${slideIdx}`;
+    total.textContent = `0${slider.length}`;
   } else {
-    current.textContent = slideIdx;
+    total.textContent = slider.length;
   }
-}
-currentSlide();
-function changeSlider() {
-  if (idx > slider.length - 1) {
-    idx = 0;
-  } else if (idx < 0) {
-    idx = slider.length - 1;
-  }
-  sliderContainer.style.transform = `translateX(-${idx * 100}%)`;
-}
 
-nextBtn.addEventListener("click", () => {
-  idx++;
-  changeSlider();
-  if (slideIdx > slider.length - 1) {
-    slideIdx = 1;
-  } else {
-    slideIdx++;
+  // current
+  function currentSlide() {
+    if (slider.length < 10) {
+      current.textContent = `0${slideIdx}`;
+    } else {
+      current.textContent = slideIdx;
+    }
   }
   currentSlide();
-});
-
-prevBtn.addEventListener("click", () => {
-  idx--;
-  changeSlider();
-  if (slideIdx == 1) {
-    slideIdx = slider.length;
-  } else {
-    slideIdx--;
+  function changeSlider() {
+    if (idx > slider.length - 1) {
+      idx = 0;
+    } else if (idx < 0) {
+      idx = slider.length - 1;
+    }
+    sliderContainer.style.transform = `translateX(-${idx * 100}%)`;
   }
-  currentSlide();
-});
+
+  nextBtn.addEventListener("click", () => {
+    idx++;
+    changeSlider();
+    if (slideIdx > slider.length - 1) {
+      slideIdx = 1;
+    } else {
+      slideIdx++;
+    }
+    currentSlide();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    idx--;
+    changeSlider();
+    if (slideIdx == 1) {
+      slideIdx = slider.length;
+    } else {
+      slideIdx--;
+    }
+    currentSlide();
+  });
+} catch (error) {
+  console.log(error.massage);
+}
 
 // home-curses jS
+const next = document.querySelector(".next_slide"),
+  prev = document.querySelector(".prev_slide"),
+  cours = document.querySelector(".courses");
+
+try {
+  let index = 0;
+
+  next.addEventListener("click", () => {
+    cours.style.transform = `translateX(-${index * 100}px)`;
+    index++;
+  });
+} catch (error) {
+  console.log(error.massage);
+}
 
 // course js
 const readMore = document.querySelector(".row-course"),
   btnNone = document.querySelector(".btn-none");
-
-btnNone.addEventListener("click", () => {
-  readMore.classList.remove("hide");
-  readMore.classList.add("show-active");
-  btnNone.classList.add("hide");
-});
+try {
+  btnNone.addEventListener("click", () => {
+    readMore.classList.remove("hide");
+    readMore.classList.add("show-active");
+    btnNone.classList.add("hide");
+  });
+} catch (error) {
+  console.log(error.massage);
+}
 
 // Faq js
 
